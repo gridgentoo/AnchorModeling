@@ -56,7 +56,7 @@ https://stats.oecd.org/Index.aspx?DataSetCode=IOTS
 
 https://drive.google.com/file/d/1ahMsr46v2es620A6p8PoC5X5UDDTgE7S/view
 
-# Цены на Палладий в Excel от Swissquote.
+# Цены на Платину, Палладий, Золото в Excel от Swissquote.
 
 Фундаментальный анализ : :
 Межотраслевой Баланс государств в Excel где ведется добыча Палладия.
