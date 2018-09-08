@@ -92,12 +92,12 @@ Supply and demand differentials for Platinum and Palladium causing a stir.David 
 
 https://www.youtube.com/watch?v=ubKux0wpFGc
 
-![alt text](https://i.ytimg.com/vi/jhaBETNH-0Y/maxresdefault.jpg) 
+![alt text](https://i.ytimg.com/vi/dvZI7jTmEsc/maxresdefault.jpg) 
 Doireann  Mc Dermott speaks to Rohit Savant, senior commodity analyst at CPM group in New York to discuss the performance of gold, silver, platinum and palladium.
 
 https://www.youtube.com/watch?v=dvZI7jTmEsc
 
-![alt text](https://i.ytimg.com/vi/dvZI7jTmEsc/maxresdefault.jpg) 
+![alt text](https://i.ytimg.com/vi/jhaBETNH-0Y/maxresdefault.jpg) 
 Carsten Fritsch, Senior Commodity Analyst with Commerzbank, talks to Dukascopy TV following The World Gold Council's 2nd Quarter Gold Report. Carsten discusses the divergence between a hike in demand for physical gold and a drop in gold investment.
 
 https://www.youtube.com/watch?v=jhaBETNH-0Y
