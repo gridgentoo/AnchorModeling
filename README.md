@@ -92,6 +92,10 @@ Supply and demand differentials for Platinum and Palladium causing a stir.David 
 
 https://www.youtube.com/watch?v=ubKux0wpFGc
 
+![alt text](https://i.ytimg.com/vi/dvZI7jTmEsc/maxresdefault.jpg) 
+Doireann  Mc Dermott speaks to Rohit Savant, senior commodity analyst at CPM group in New York to discuss the performance of gold, silver, platinum and palladium.
+https://www.youtube.com/watch?v=dvZI7jTmEsc
+
 # Архитектура [Voltdb] хранение данных в памяти с концепцией распределенной организации
 https://github.com/gridgentoo/voltdb
 
