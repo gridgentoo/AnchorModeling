@@ -154,5 +154,6 @@ https://github.com/gridgentoo/janusgraph
 
 # Архитектура [PentahoPlatform]
 ![Image alt](https://i.ytimg.com/vi/7GIOgO9DzxY/hqdefault.jpg)
+
 https://github.com/gridgentoo/PentahoPlatform
 
