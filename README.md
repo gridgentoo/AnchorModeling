@@ -29,6 +29,9 @@ http://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/data/workbooks
 # Таблицы «Input–output model» для Российской Федерации
 http://www.gks.ru/wps/wcm/connect/rosstat_main/rosstat/ru/statistics/accounts/#
 
+# Таблицы «затраты — выпуск» для ряда стран мира от ОЭСР
+https://stats.oecd.org/Index.aspx?DataSetCode=IOTS
+
 # [Excel] Индекс силы Элдера в Excel на фьючерсы на Золото, Палладий, Платину, Алюминий, Медь
 Индекс силы Элдера, измеряет силу быков при каждом подъеме и силу медведей при каждом спаде. Он связывает воедино направление цены, ее перепады и объем сделок.
 
