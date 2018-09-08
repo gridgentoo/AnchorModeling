@@ -40,3 +40,9 @@ https://www.youtube.com/watch?v=50AGt4L6TqE
 Supply and demand differentials for Platinum and Palladium causing a stir.David Wilson, Citigroup.
 
 https://www.youtube.com/watch?v=ubKux0wpFGc
+
+# Архитектура [Voltdb] хранение данных в памяти с концепцией распределенной организации
+https://github.com/gridgentoo/voltdb
+
+# Архитектура [PentahoPlatform]
+https://github.com/gridgentoo/PentahoPlatform
