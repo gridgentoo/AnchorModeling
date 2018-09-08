@@ -150,4 +150,7 @@ https://drive.google.com/drive/folders/1urykDEER9tFap2weFVq2qPh5mz-r7svu
 
 # Архитектура [deeplearning4j] фреймворка для глубокого обучения. 
 Обучение в Deeplearning4j осуществляется через кластеры. Нейронные сети обучаются параллельно по итерациям, процесс поддерживается архитектурами Hadoop-YARN и Spark. Deeplearning4j осуществляет также интеграцию с ядром архитектуры CUDA для осуществления чистых операций с GPU и распределения операций на графических процессорах.
+
+# Архитектура [JanusGraph] graph database
+https://github.com/gridgentoo/janusgraph
 ![Image alt](https://i2.wp.com/mesutpiskin.com/blog/wp-content/uploads/2017/09/dl4j-eco-tr.jpg.jpg)
