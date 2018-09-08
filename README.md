@@ -102,6 +102,9 @@ Carsten Fritsch, Senior Commodity Analyst with Commerzbank, talks to Dukascopy T
 
 https://www.youtube.com/watch?v=jhaBETNH-0Y
 
+![alt text](https://i.ytimg.com/vi/tFrOUuvT6AU/maxresdefault.jpg) 
+https://www.youtube.com/watch?v=tFrOUuvT6AU
+
 # Архитектура [Voltdb] хранение данных в памяти с концепцией распределенной организации
 https://github.com/gridgentoo/voltdb
 
