@@ -125,9 +125,6 @@ https://www.youtube.com/watch?v=KrTOXtJG5dE
 # Архитектура [Voltdb] хранение данных в памяти с концепцией распределенной организации
 https://github.com/gridgentoo/voltdb
 
-# Архитектура [PentahoPlatform]
-https://github.com/gridgentoo/PentahoPlatform
-
 # Мост между VoltDB to Hive
 https://github.com/gridgentoo/VoltDB_to_Hive_export
 
@@ -150,7 +147,12 @@ https://drive.google.com/drive/folders/1urykDEER9tFap2weFVq2qPh5mz-r7svu
 
 # Архитектура [deeplearning4j] фреймворка для глубокого обучения. 
 Обучение в Deeplearning4j осуществляется через кластеры. Нейронные сети обучаются параллельно по итерациям, процесс поддерживается архитектурами Hadoop-YARN и Spark. Deeplearning4j осуществляет также интеграцию с ядром архитектуры CUDA для осуществления чистых операций с GPU и распределения операций на графических процессорах.
+![Image alt](https://i2.wp.com/mesutpiskin.com/blog/wp-content/uploads/2017/09/dl4j-eco-tr.jpg.jpg)
 
 # Архитектура [JanusGraph] graph database
 https://github.com/gridgentoo/janusgraph
-![Image alt](https://i2.wp.com/mesutpiskin.com/blog/wp-content/uploads/2017/09/dl4j-eco-tr.jpg.jpg)
+
+# Архитектура [PentahoPlatform]
+![Image alt](https://i.ytimg.com/vi/7GIOgO9DzxY/hqdefault.jpg)
+https://github.com/gridgentoo/PentahoPlatform
+
