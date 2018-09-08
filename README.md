@@ -4,7 +4,8 @@ Enerprise Architect for capability-based planning has emerged as a [key techniqu
 ![alt text](http://enterprisearchitects.com/wp-content/uploads/2013/10/Sample-Business-Anchor-Model-inc-SCOR-a.jpg)
 
 BigData & Эконометрика! «Финансовая математика. Чем занимаются гении на бирже?».......
-Оценка рисков ЦБ РФ и 40 государств. Межотраслевое моделирование :)
+
+Оценка рисков ЦБ Европы, ЦБ Японии, ЦБ РФ и МОБ 40 государств. Межотраслевое моделирование :)
 
 https://www.youtube.com/watch?v=5_cjhSXSGBY
   
