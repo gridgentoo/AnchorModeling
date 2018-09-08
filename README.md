@@ -29,7 +29,7 @@ http://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/data/workbooks
 # Таблицы «Input–output model» для Российской Федерации
 http://www.gks.ru/wps/wcm/connect/rosstat_main/rosstat/ru/statistics/accounts/#
 
-# Таблицы «затраты — выпуск» для ряда стран мира от ОЭСР
+# Таблицы «затраты — выпуск» для ряда стран мира
 https://stats.oecd.org/Index.aspx?DataSetCode=IOTS
 
 # [Excel] Индекс силы Элдера в Excel на фьючерсы на Золото, Палладий, Платину, Алюминий, Медь
