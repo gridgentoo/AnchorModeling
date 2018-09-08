@@ -118,6 +118,9 @@ https://www.youtube.com/watch?v=_59b0ugMMVg
 
 https://www.youtube.com/watch?v=KrTOXtJG5dE
 
+![alt text](https://i.ytimg.com/vi/2JDUlTA5XyI/maxresdefault.jpg) 
+Покупка фьючерсов на палладий
+
 # Архитектура [Voltdb] хранение данных в памяти с концепцией распределенной организации
 https://github.com/gridgentoo/voltdb
 
