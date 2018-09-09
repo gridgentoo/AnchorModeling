@@ -39,7 +39,7 @@ https://www.bea.gov/industry/input-output-accounts-data
 * [Межотраслевые Балансы] Таблицы «Input–output model» для Германии
 https://www.destatis.de/DE/Publikationen/Thematisch/VolkswirtschaftlicheGesamtrechnungen/InputOutputRechnung/VGRInputOutputRechnung.html
 
-* [Межотраслевые Балансы] Таблицы «Input–output model» для Франции
+* [Межотраслевые Балансы] Таблицы «Input–output model» для Франции  
 https://www.insee.fr/en/statistiques/2561550
 
 * [Межотраслевые Балансы] Таблицы «Input–output model» для стран Европейского Союза
@@ -48,7 +48,7 @@ http://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/data/workbooks
 * [Межотраслевые Балансы]Таблицы «Input–output model» для Российской Федерации
 http://www.gks.ru/wps/wcm/connect/rosstat_main/rosstat/ru/statistics/accounts/#
 
-* [Межотраслевые Балансы] Таблицы « nput–output model» для ряда стран мира
+* [Межотраслевые Балансы] Таблицы « nput–output model» для ряда стран мира  
 https://stats.oecd.org/Index.aspx?DataSetCode=IOTS
 
 # [Excel] Индекс силы Элдера в Excel на фьючерсы на Золото, Палладий, Платину, Алюминий, Медь
