@@ -33,22 +33,22 @@ https://en.wikipedia.org/wiki/Input%E2%80%93output_model
 
 Межотраслевой баланс представлен в виде системы линейных уравнений. Межотраслевой баланс (МОБ) представляет собой таблицу, в которой отражен процесс формирования и использования совокупного общественного продукта в отраслевом разрезе. Таблица показывает структуру затрат на производство каждого продукта и структуру его распределения в экономике. По столбцам отражается стоимостной состав валового выпуска отраслей экономики по элементам промежуточного потребления и добавленной стоимости. По строкам отражаются направления использования ресурсов каждой отрасли.
   
-# Таблицы «Input–output model» для США
+* [Межотраслевые Балансы] Таблицы «Input–output model» для США
 https://www.bea.gov/industry/input-output-accounts-data
 
-# Таблицы «Input–output model» для Германии
+* [Межотраслевые Балансы] Таблицы «Input–output model» для Германии
 https://www.destatis.de/DE/Publikationen/Thematisch/VolkswirtschaftlicheGesamtrechnungen/InputOutputRechnung/VGRInputOutputRechnung.html
 
-# Таблицы «Input–output model» для Франции
+* [Межотраслевые Балансы] Таблицы «Input–output model» для Франции
 https://www.insee.fr/en/statistiques/2561550
 
-# Таблицы «Input–output model» для стран Европейского Союза
+* [Межотраслевые Балансы] Таблицы «Input–output model» для стран Европейского Союза
 http://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/data/workbooks
 
-# Таблицы «Input–output model» для Российской Федерации
+* [Межотраслевые Балансы]Таблицы «Input–output model» для Российской Федерации
 http://www.gks.ru/wps/wcm/connect/rosstat_main/rosstat/ru/statistics/accounts/#
 
-# Таблицы «Input–output model» для ряда стран мира
+* [Межотраслевые Балансы] Таблицы « nput–output model» для ряда стран мира
 https://stats.oecd.org/Index.aspx?DataSetCode=IOTS
 
 # [Excel] Индекс силы Элдера в Excel на фьючерсы на Золото, Палладий, Платину, Алюминий, Медь
