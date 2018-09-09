@@ -1,4 +1,4 @@
-# AnchorModeling & «Input–output model - МОБ»
+# [AnchorModeling] for Input–output model [Межотраслевые Балансы]
 
 Enerprise Architect for capability-based planning has emerged as a [key technique for architects] to [anchor] their business and technology investment recommendation
 ![alt text](http://enterprisearchitects.com/wp-content/uploads/2013/10/Sample-Business-Anchor-Model-inc-SCOR-a.jpg)
