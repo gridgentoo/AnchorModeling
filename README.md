@@ -46,6 +46,9 @@ https://www.insee.fr/en/statistiques/2561550
 * [Межотраслевые Балансы] Таблицы «Input–output model» для стран Европейского Союза
 http://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/data/workbooks
 
+[Межотраслевые Балансы]Таблицы «Input–output model» для Австралии
+https://stats.oecd.org/Index.aspx?DataSetCode=IOTS
+
 * [Межотраслевые Балансы]Таблицы «Input–output model» для Российской Федерации
 http://www.gks.ru/wps/wcm/connect/rosstat_main/rosstat/ru/statistics/accounts/#
 
