@@ -19,6 +19,9 @@ https://www.youtube.com/watch?v=2er-jebT9T0&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNy
 [Николай Голов] Lambda architecture для realtime аналитики [Авито]  
 https://www.youtube.com/watch?v=D98nNXQMBso&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm&index=34
 
+VoltDB In-Memory Database Achieves Best-In-Class Results, Running in the Cloud, On the YCSB Benchmark
+https://www.voltdb.com/blog/2014/05/07/voltdb-memory-database-achieves-best-class-results-running-cloud-ycsb-benchmark/
+
 Enerprise Architect for capability-based planning has emerged as a [key technique for architects] to [anchor] their business and technology investment recommendation
 ![alt text](http://enterprisearchitects.com/wp-content/uploads/2013/10/Sample-Business-Anchor-Model-inc-SCOR-a.jpg)
 
