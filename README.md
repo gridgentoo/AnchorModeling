@@ -4,7 +4,7 @@
 Excel как инструмент Проектирования хранилищ данных DWH Data Warehous  
 https://www.youtube.com/watch?v=5ThDc3PTpo4&index=32&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm
 
-[Николай Голов, Авито] зачем нужна нормализация в Big Data  
+[Николай Голов] зачем нужна нормализация в Big Data [Авито] 
 https://www.youtube.com/watch?v=2er-jebT9T0&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm&index=33
 
 Enerprise Architect for capability-based planning has emerged as a [key technique for architects] to [anchor] their business and technology investment recommendation
