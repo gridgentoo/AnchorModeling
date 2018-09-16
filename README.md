@@ -8,7 +8,7 @@ Excel как инструмент Проектирования хранилищ 
 https://www.youtube.com/watch?v=5ThDc3PTpo4&index=32&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm
 
 [Николай Голов] Как мы считали трафик на Вертике [Авито]  
-https://www.youtube.com/watch?v=F3pCSytpZ6Q
+https://www.youtube.com/watch?v=F3pCSytpZ6Q&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm&index=35
 
 [Николай Голов] зачем нужна нормализация в Big Data [Авито]  
 https://www.youtube.com/watch?v=2er-jebT9T0&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm&index=33
