@@ -1,6 +1,7 @@
 # [AnchorModeling] for Input–output model [Межотраслевые Балансы]
 ![alt text](http://www.anchormodeling.com/wp-content/uploads/2010/08/AMatDSV.jpg)
 
+
 [ClickHouse vs Vertica vs GreenPlum] Сравнение производительности аналитических СУБД  
 https://clickhouse.yandex/benchmark.html
 
