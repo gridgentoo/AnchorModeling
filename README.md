@@ -7,6 +7,9 @@ https://clickhouse.yandex/benchmark.html
 Excel как инструмент Проектирования хранилищ данных DWH Data Warehous  
 https://www.youtube.com/watch?v=5ThDc3PTpo4&index=32&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm
 
+[Николай Голов] Нюансы реализации колоночного хранения данных [Avito]  
+https://www.youtube.com/watch?v=Mu4K4T-SRfc&feature=youtu.be
+
 [Николай Голов] Как мы считали трафик на Вертике [Авито]  
 https://www.youtube.com/watch?v=F3pCSytpZ6Q&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm&index=35
 
