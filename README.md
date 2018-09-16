@@ -1,7 +1,7 @@
 # [AnchorModeling] for Input–output model [Межотраслевые Балансы]
 ![alt text](http://www.anchormodeling.com/wp-content/uploads/2010/08/AMatDSV.jpg)
 
-Excel как инструмент Проектирования хранилищ данных DWH Data Warehous
+Excel как инструмент Проектирования хранилищ данных DWH Data Warehous  
 https://www.youtube.com/watch?v=5ThDc3PTpo4&index=32&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm
 
 Enerprise Architect for capability-based planning has emerged as a [key technique for architects] to [anchor] their business and technology investment recommendation
