@@ -1,6 +1,10 @@
 # [AnchorModeling] for Input–output model [Межотраслевые Балансы]
 ![alt text](http://www.anchormodeling.com/wp-content/uploads/2010/08/AMatDSV.jpg)
 
+![alt text](https://i.ytimg.com/vi/UxVbDJ3ERas/maxresdefault.jpg)
+The Economics of Wassily Leontief: Input-Output Analysis  
+https://www.youtube.com/watch?v=UxVbDJ3ERas
+
 [ClickHouse vs Vertica vs GreenPlum] Сравнение производительности аналитических СУБД  
 https://clickhouse.yandex/benchmark.html
 
