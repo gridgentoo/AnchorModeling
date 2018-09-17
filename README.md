@@ -4,6 +4,7 @@
 [ClickHouse vs Vertica vs GreenPlum] Сравнение производительности аналитических СУБД  
 https://clickhouse.yandex/benchmark.html
 
+
 Excel как инструмент Проектирования хранилищ данных DWH Data Warehous  
 https://www.youtube.com/watch?v=5ThDc3PTpo4&index=32&list=PLrTrFnOkIFb0G8u6VwtUSbIgZDERNyAvm
 
