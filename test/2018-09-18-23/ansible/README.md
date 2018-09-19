@@ -1,10 +1,12 @@
-HOWTO
+# A Docker container containing an Vertica DB with HDFS (for Spark integration) ready to use
+https://github.com/gridgentoo/docker-vertica-hdfs
 
+# loading hdfs data to clickhouse
+https://github.com/gridgentoo/clickhouse-hdfs-loader
+
+# HOWTO
 
 sudo ./run.sh | cat
-
-
-
 
 ===== DEBUG =====
 
