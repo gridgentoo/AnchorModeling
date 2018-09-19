@@ -1,0 +1,8 @@
+---
+# https://github.com/mgoddard-pivotal/gpdb-build-gcp-ubuntu
+- hosts: localhost
+  sudo: true
+  tasks:
+    - name: GreenPlumDB | Not implemented yet
+      lineinfile: dest=/tmp/greenplumdb.tmp line="" state=present create=yes
+

@@ -1,0 +1,30 @@
+---
+# https://gist.github.com/fernando-romero/f7a8129156b97ceba3d9
+- hosts: localhost
+  sudo: true
+  vars:
+    mongodb_version: 3.0.7
+  tasks:
+    - name: MongoDB | Import the public key used by the package management system
+      apt_key: keyserver=keyserver.ubuntu.com id=7F0CEB10
+    - name: MongoDB | Create a list file
+      lineinfile: dest=/etc/apt/sources.list.d/mongodb-org-3.0.list line="deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.0 multiverse" state=present create=yes
+    - name: MongoDB | Install the packages
+      apt: name={{ item }}={{ mongodb_version }} state=present update_cache=yes
+      with_items:
+        - mongodb-org
+        - mongodb-org-server
+        - mongodb-org-shell
+        - mongodb-org-mongos
+        - mongodb-org-tools
+      notify:
+        - restart mongodb
+        - sleep 1
+    - name: MongoDB | Listen to all interfaces
+      lineinfile: "dest=/etc/mongod.conf regexp='^  bindIp: 127.0.0.1' state=absent"
+      notify:
+        - restart mongodb
+        - sleep 1
+  handlers:
+    - name: restart mongodb
+      service: name=mongod state=restarted
