@@ -1,14 +1,39 @@
 ---
-# https://gist.github.com/fernando-romero/f7a8129156b97ceba3d9
-- hosts: localhost
-  sudo: true
+# https://github.com/spatialcurrent/ansible-mongodb-ubuntu/blob/master/tasks/main.yml
+- hosts: localhost 
+  sudo: True
+  remote_user: root
+
   vars:
+    mongo_user: mongo
+    mongo_group: mongo
     mongodb_version: 3.0.7
   tasks:
     - name: MongoDB | Import the public key used by the package management system
+      become: yes
+      become_user: root 
       apt_key: keyserver=keyserver.ubuntu.com id=7F0CEB10
-    - name: MongoDB | Create a list file
-      lineinfile: dest=/etc/apt/sources.list.d/mongodb-org-3.0.list line="deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.0 multiverse" state=present create=yes
+      keyserver: hkp://keyserver.ubuntu.com:80
+      id: EA312927
+
+    - name: Add MongoDB to APT Sources
+      become: yes
+      become_user: root
+      lineinfile:
+        dest: /etc/apt/sources.list.d/mongodb-org-3.2.list
+        regexp: "^deb(\\s+)http://repo.mongodb.org/apt/"
+        line: "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse"
+        state: present
+        create: yes
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: "apt-get update"
+      apt: update_cache=yes
+      become: yes
+      become_user: root
+
     - name: MongoDB | Install the packages
       apt: name={{ item }}={{ mongodb_version }} state=present update_cache=yes
       with_items:
@@ -17,14 +42,75 @@
         - mongodb-org-shell
         - mongodb-org-mongos
         - mongodb-org-tools
-      notify:
-        - restart mongodb
-        - sleep 1
-    - name: MongoDB | Listen to all interfaces
-      lineinfile: "dest=/etc/mongod.conf regexp='^  bindIp: 127.0.0.1' state=absent"
-      notify:
-        - restart mongodb
-        - sleep 1
-  handlers:
-    - name: restart mongodb
-      service: name=mongod state=restarted
+
+    - command: touch /tmp/mongo.service.tmp
+      become: yes
+
+    - command: rm /tmp/mongo.service.tmp
+      become: yes
+
+    - command: touch /tmp/mongo.service.tmp
+      become: yes
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='[Unit]'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='Description=High-performance, schema-free document-oriented database'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='After=network.target'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='[Service]'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='User={{ mongo_user }}'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='Group={{ mongo_group }}'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='ExecStop=/usr/bin/mongod stop'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='Restart=always'
+
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='[Install]'
+    - name: prepare mongo-as-a-service
+      lineinfile: dest=/tmp/mongo.service.tmp
+                  line='WantedBy=multi-user.target'
+
+    - name: Register MongoDB as Service
+      become: yes
+      become_user: root
+      copy:
+        src: /tmp/mongo.service.tmp
+        dest: /etc/systemd/system/mongodb.service
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Restart MongoDB Service
+      become: yes
+      become_user: root
+      service: name=mongodb state=restarted
+
+    - name: Enable MongoDB Service
+      become: yes
+      become_user: root
+      service: name=mongodb enabled=yes

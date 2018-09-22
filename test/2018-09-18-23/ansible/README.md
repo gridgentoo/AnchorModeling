@@ -1,6 +1,6 @@
 # HOWTO
 
-sudo ./run.sh | cat
+sudo sh run.sh | cat
 
 ===== DEBUG =====
 

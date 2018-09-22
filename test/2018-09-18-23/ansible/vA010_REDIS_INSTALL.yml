@@ -135,6 +135,12 @@
     - command: touch /tmp/redis.service.tmp
       become: yes
 
+    - command: rm /tmp/redis.service.tmp
+      become: yes
+
+    - command: touch /tmp/redis.service.tmp
+      become: yes
+
     - name: prepare redis-as-a-service
       lineinfile: dest=/tmp/redis.service.tmp
                   line='[Unit]'
