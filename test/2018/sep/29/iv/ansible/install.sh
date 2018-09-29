@@ -1,0 +1,3 @@
+#!/bin/sh
+set -x -e
+echo download https://archive.apache.org/dist/kafka/0.10.2.1/kafka_2.11-0.10.2.1.tgz
