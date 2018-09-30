@@ -12,3 +12,5 @@ sdk install scala 2.11.8
 ./kafka-server-start.sh ../config/server.properties
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic my_topic
 ./kafka-console-consumer.sh --zookeeper localhost:2181 --topic my_topic --from_beginning
+./kafka-topics.sh --create --topic replicated_topic --zookeeper localhost:2181 --replication-factor 3 --partitions 1
+./kafka-topics.sh --describe --topic replicated_topic --zookeeper localhost:2181
