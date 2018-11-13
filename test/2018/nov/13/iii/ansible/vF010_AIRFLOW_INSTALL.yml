@@ -1,0 +1,128 @@
+---
+# https://github.com/idealista/airflow-role/blob/master/tasks/install.yml
+- hosts: localhost 
+  sudo: True
+  remote_user: root
+
+  vars:
+    ipv4_addr: '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+    air_user: air
+    air_group: air
+    # change for production
+    air_bind_addr: 127.0.0.1
+    air_port: 6379
+    air_tcp_sockets: 511
+    air_socket: /var/run/redis/redis.sock
+    air_socket_permissions: 770
+    air_logfile: /var/log/redis/redis-server.log
+    # generate a 32-character password with apg:
+    # apg -m 32 -x 1 -a 1 -n 1
+    air_password: redis
+  
+  # install python 2.7 on Ubuntu > 14.x 
+  # solves "/bin/sh: 1: /usr/bin/python: not found" issue with
+  # later Ubuntu releases
+  gather_facts: no
+  pre_tasks:
+    - name: 'install python2'
+      raw: sudo apt-get -y install python-simplejson  
+
+  tasks:
+    - name: Airflow | Ensure Airflow group
+      group:
+        name: "{{ airflow_group }}"
+
+    - name: Airflow | Ensure Airflow user
+      user:
+        name: "{{ airflow_user }}"
+        group: "{{ airflow_group }}"
+        shell: /bin/bash
+
+    - name: Airflow | Create path for Airflow home
+      file:
+        path: "{{ airflow_home }}"
+        state: directory
+        owner: "{{ airflow_user }}"
+        group: "{{ airflow_group }}"
+
+    - name: Airflow | Create path for configuration files
+      file:
+        path: "{{ airflow_environment_file_folder }}"
+        state: directory
+        owner: "{{ airflow_user }}"
+        group: "{{ airflow_group }}"
+
+    - name: Airflow | Installing dependencies
+      apt:
+        pkg: "{{ item }}"
+        state: present
+        update_cache: yes
+      with_items: "{{ airflow_required_libs }}"
+    
+    - name: Airflow | Installing proper Celery version
+      pip:
+        executable: "{{ airflow_pip_executable }}"
+        name: celery
+        version: "{{ celery_version }}"
+      when: airflow_executor == "CeleryExecutor"
+    
+    - name: Airflow | Installing extra Celery packages
+      pip:
+        executable: "{{ airflow_pip_executable }}"
+        name: celery[{{ item }}]
+        version: "{{ celery_version }}"
+      with_items: "{{ celery_extra_packages }}"
+      when: airflow_executor == "CeleryExecutor" and celery_extra_packages
+    
+    - name: Airflow | Set AIRFLOW_HOME environment variable in /etc/environment
+      lineinfile:
+        path: /etc/environment
+        line: 'AIRFLOW_HOME={{ airflow_home }}'
+    
+    - name: Airflow | Installing Airflow
+      pip:
+        executable: "{{ airflow_pip_executable }}"
+        name: apache-airflow
+        version: "{{ airflow_version }}"
+        extra_args: --no-cache-dir
+      register: airflow_install
+      environment:
+        SLUGIFY_USES_TEXT_UNIDECODE: "yes"
+    
+    - name: Airflow | Installing Airflow Extra Packages
+      pip:
+        executable: "{{ airflow_pip_executable }}"
+        name: apache-airflow[{{ item }}]
+        version: "{{ airflow_version }}"
+      with_items: "{{ airflow_extra_packages }}"
+      when: airflow_extra_packages
+    
+    - name: Airflow | Installing DAGs dependencies
+      pip:
+        executable: "{{ airflow_pip_executable }}"
+        name: "{{ item.name }}"
+        version: "{{ item.version }}"
+      with_items: "{{ dags_dependencies }}"
+      when: dags_dependencies
+      notify:
+        - restart airflow-webserver
+        - restart airflow-scheduler
+        - restart airflow-worker
+        - restart airflow-flower
+    
+    - name: Airflow | Copy Environment File
+      template:
+        src: airflow-environment-file.j2
+        dest: "{{ airflow_environment_file_folder }}/airflow"
+        mode: 0644
+        owner: "{{ airflow_user }}"
+        group: "{{ airflow_group }}"
+    
+    - name: Airflow | Copy Daemon scripts
+      template:
+        src: "{{ item.key }}.service.j2"
+        dest: /lib/systemd/system/{{ item.key }}.service
+        mode: 0644
+      notify: restart {{ item.key }}
+      with_dict: "{{ airflow_services }}"
+      when: "{{ item.value.enabled }}"
