@@ -24,8 +24,8 @@ test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
 test "$N" -le "016" && sudo -H  -u airflow pip3 uninstall airflow || true
 test "$N" -le "017" && sudo -H  -u airflow pip3 uninstall redis || true
 
-test "$N" -le "018" && sudo -H  -u airflow pip3 install --user --target=/opt/airflow/airflow_home/web/2 airflow[postgres,s3,celery]==1.8.0
-test "$N" -le "019" && sudo -H  -u airflow pip3 install --user --target=/opt/airflow/airflow_home/web/3 redis
+test "$N" -le "018" && sudo -H  -u airflow pip3 install --user --target=/opt/airflow/airflow_home/web/py3_airflow airflow[postgres,s3,celery]==1.8.0
+test "$N" -le "019" && sudo -H  -u airflow pip3 install --user --target=/opt/airflow/airflow_home/web/py3_redis redis
 test "$N" -le "020" && sudo -H  -u airflow "$H/bin/airflow" webserver 2>/dev/null || true
 
 test "$N" -le "021" && sudo cp ./_03_files/airflow.cfg "$H/web/airflow.cfg.sample"
