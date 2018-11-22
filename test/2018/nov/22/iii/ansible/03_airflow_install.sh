@@ -21,8 +21,8 @@ test "$N" -le "013" && sudo pip3 install virtualenv
 
 test "$N" -le "014" && (cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v env)
 test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
-test "$N" -le "016" && sudo -H  -u airflow pip3 uninstall airflow
-test "$N" -le "017" && sudo -H  -u airflow pip3 uninstall redis
+test "$N" -le "016" && sudo -H  -u airflow pip3 uninstall airflow || true
+test "$N" -le "017" && sudo -H  -u airflow pip3 uninstall redis || true
 t
 test "$N" -le "018" && sudo -H  -u airflow pip3 install --user --target=/opt/airflow/airflow_home/web/2 airflow[postgres,s3,celery]==1.8.0
 test "$N" -le "019" && sudo -H  -u airflow pip3 install --user --target=/opt/airflow/airflow_home/web/3 redis
