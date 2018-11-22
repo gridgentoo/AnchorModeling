@@ -10,8 +10,8 @@ test "$N" -le "005" && sudo -u postgres psql -c "CREATE USER airflow with PASSWO
 test "$N" -le "006" && sudo -u postgres psql -c "CREATE DATABASE airflow"
 test "$N" -le "007" && sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE airflow to airflow"
 
-test "$N" -le "008" && sudo apt-get -y install python-pip
-test "$N" -le "009" && sudo pip install virtualenv
+test "$N" -le "008" && sudo apt-get -y install python-pip3
+test "$N" -le "009" && sudo pip3 install virtualenv
 test "$N" -le "010" && sudo mkdir -p /opt/airflow/airflow_home
 test "$N" -le "011" && sudo rm -rf /opt/airflow/airflow_home/env
 
