@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e -x
-! test -n "$N" && N=001
+! test -n "$N" && N=014
 # https://blog.nolanemirot.com/2017/08/14/install-airflow-1-8-0-on-ubuntu-16-04/
 H=/opt/airflow/airflow_home
 test "$N" -le "001" && sudo apt-get update
@@ -11,21 +11,21 @@ test "$N" -le "005" && sudo -u postgres psql -c "CREATE USER airflow with PASSWO
 test "$N" -le "006" && sudo -u postgres psql -c "CREATE DATABASE airflow"
 test "$N" -le "007" && sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE airflow to airflow"
 
-test "$N" -le "008" && sudo apt-get -y install python3-pip
+test "$N" -le "008" && sudo apt-get -y install python-pip
 test "$N" -le "009" && sudo mkdir -p "$H"
 test "$N" -le "010" && sudo rm -rf "$H/env"
 
 test "$N" -le "011" && sudo adduser --quiet --disabled-password --home "$H" airflow || true
 test "$N" -le "012" && sudo chown -R airflow "$H"
-test "$N" -le "013" && sudo pip3 install virtualenv
+test "$N" -le "013" && sudo pip install virtualenv
 
-test "$N" -le "014" && (cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v env)
+test "$N" -le "014" && cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v "$H/env"
 test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
-test "$N" -le "016" && sudo -H  -u airflow pip3 uninstall airflow || true
-test "$N" -le "017" && sudo -H  -u airflow pip3 uninstall redis || true
+test "$N" -le "016" && sudo -H  -u airflow pip uninstall airflow || rm -rf "$H/$web/py3_airflow"
+test "$N" -le "017" && sudo -H  -u airflow pip uninstall redis || rm -rf "$H/web/py3_redis"
 
-test "$N" -le "018" && sudo -H  -u airflow pip3 install --user --install-option="--prefix=$H/web/py3_airflow" airflow[postgres,s3,celery]==1.8.0
-test "$N" -le "019" && sudo -H  -u airflow pip3 install --user --install-option="--prefix=$H/web/py3_redis" redis
+test "$N" -le "018" && sudo -H  -u airflow pip install --user airflow[postgres,s3,celery]==1.8.0
+test "$N" -le "019" && sudo -H  -u airflow pip install --user redis
 test "$N" -le "020" && sudo -H  -u airflow "$H/bin/airflow" webserver 2>/dev/null || true
 
 test "$N" -le "021" && sudo cp ./_03_files/airflow.cfg "$H/web/airflow.cfg.sample"
