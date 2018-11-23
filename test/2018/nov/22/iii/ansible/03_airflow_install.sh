@@ -27,7 +27,7 @@ test "$N" -le "017" && sudo -H  -u airflow pip uninstall -y redis || rm -rf "$H/
 
 test "$N" -le "018" && sudo -H  -u airflow pip install --user apache-airflow[postgres,s3,celery]==1.8.2
 test "$N" -le "019" && sudo -H  -u airflow pip install --user redis
-test "$N" -le "020" && sudo -H  -u airflow "$H/bin/airflow" webserver 2>/dev/null || true
+test "$N" -le "020" && sudo -H  -u airflow "$H/bin/airflow" webserver 2>&1 || true
 
 test "$N" -le "021" && sudo mkdir -p "$H/web/"
 test "$N" -le "022" && sudo cp "$W/_03_files/airflow.cfg" "$H/web/airflow.cfg.sample"
@@ -39,7 +39,7 @@ test "$N" -le "026" && sudo sed -i 's#celery_result_backend = db+postgres://airf
 test "$N" -le "027" && sudo chown -R airflow "$H/web/airflow.cfg.sample"
 test "$N" -le "028" && sudo -H  -u airflow "$H/web/airflow/bin/airflow" initdb
 
-test "$N" -le "029" && sudo cp "$W/kill-all-airflow.sh" "$H/web/"
-test "$N" -le "030" && sudo cp "$W/kill-all-airflow-workerts.sh" "$H/web/"
+test "$N" -le "029" && sudo cp "$W/_03_files/kill-all-airflow.sh" "$H/web/"
+test "$N" -le "030" && sudo cp "$W/_03_files/kill-all-airflow-workerts.sh" "$H/web/"
 test "$N" -le "031" && sudo cp "$W/_03_files/start.sh" "$H/web/"
 
