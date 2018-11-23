@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e -x
-! test -n "$N" && N=014
+! test -n "$N" && N=001
 # https://blog.nolanemirot.com/2017/08/14/install-airflow-1-8-0-on-ubuntu-16-04/
 H=/opt/airflow/airflow_home
 test "$N" -le "001" && sudo apt-get update
@@ -19,12 +19,12 @@ test "$N" -le "011" && sudo adduser --quiet --disabled-password --home "$H" airf
 test "$N" -le "012" && sudo chown -R airflow "$H"
 test "$N" -le "013" && sudo pip install virtualenv
 
-test "$N" -le "014" && cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v "$H/env"
+test "$N" -le "014" && (cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v "$H/env")
 test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
 test "$N" -le "016" && sudo -H  -u airflow pip uninstall airflow || rm -rf "$H/$web/py3_airflow"
 test "$N" -le "017" && sudo -H  -u airflow pip uninstall redis || rm -rf "$H/web/py3_redis"
 
-test "$N" -le "018" && sudo -H  -u airflow pip install --user airflow[postgres,s3,celery]==1.8.0
+test "$N" -le "018" && sudo -H  -u airflow pip install --user apache-airflow[postgres,s3,celery]==1.8.2
 test "$N" -le "019" && sudo -H  -u airflow pip install --user redis
 test "$N" -le "020" && sudo -H  -u airflow "$H/bin/airflow" webserver 2>/dev/null || true
 
