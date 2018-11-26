@@ -14,19 +14,20 @@ test "$N" -le "006" && sudo -u postgres psql -c "CREATE DATABASE airflow"
 test "$N" -le "007" && sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE airflow to airflow"
 
 test "$N" -le "008" && sudo apt-get -y install python-pip
-test "$N" -le "009" && sudo mkdir -p "$H"
-test "$N" -le "010" && sudo rm -rf "$H/env"
+test "$N" -le "009" && sudo pip install --upgrade pip
 
-test "$N" -le "011" && sudo adduser --quiet --disabled-password --home "$H" airflow || true
-test "$N" -le "012" && sudo chown -R airflow "$H"
-test "$N" -le "013" && sudo pip install virtualenv
+test "$N" -le "010" && sudo mkdir -p "$H"
+test "$N" -le "011" && sudo rm -rf "$H/env"
 
-test "$N" -le "014" && (cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v "$H/env")
-test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
-test "$N" -le "016" && sudo -H  -u airflow pip uninstall -y apache-airflow || rm -rf "$H/$web/py3_airflow"
-test "$N" -le "017" && sudo -H  -u airflow pip uninstall -y redis || rm -rf "$H/web/py3_redis"
+test "$N" -le "012" && sudo adduser --quiet --disabled-password --home "$H" airflow || true
+test "$N" -le "013" && sudo chown -R airflow "$H"
+test "$N" -le "014" && sudo pip install virtualenv
 
-test "$N" -le "018" && sudo -H  -u airflow pip install --user --upgrade pip
+test "$N" -le "015" && (cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v "$H/env")
+test "$N" -le "016" && sudo -H  -u airflow sh "$H/env/bin/activate"
+test "$N" -le "017" && sudo -H  -u airflow pip uninstall -y apache-airflow || rm -rf "$H/$web/py3_airflow"
+test "$N" -le "018" && sudo -H  -u airflow pip uninstall -y redis || rm -rf "$H/web/py3_redis"
+
 test "$N" -le "019" && sudo -H  -u airflow AIRFLOW_HOME="$H" pip install --user apache-airflow[postgres,s3,celery]==1.8.2
 test "$N" -le "020" && sudo -H  -u airflow pip install --user redis
 test "$N" -le "021" && sudo -H  -u airflow ${D}airflow webserver 2>&1 || true
