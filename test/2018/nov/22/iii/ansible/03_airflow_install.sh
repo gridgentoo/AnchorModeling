@@ -26,7 +26,7 @@ test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
 test "$N" -le "016" && sudo -H  -u airflow pip uninstall -y apache-airflow || rm -rf "$H/$web/py3_airflow"
 test "$N" -le "017" && sudo -H  -u airflow pip uninstall -y redis || rm -rf "$H/web/py3_redis"
 
-test "$N" -le "018" && sudo -H  -u airflow AIRFLOW_HOME="$H" pip install --upgrade pip
+test "$N" -le "018" && sudo -H  -u airflow pip install --user --upgrade pip
 test "$N" -le "019" && sudo -H  -u airflow AIRFLOW_HOME="$H" pip install --user apache-airflow[postgres,s3,celery]==1.8.2
 test "$N" -le "020" && sudo -H  -u airflow pip install --user redis
 test "$N" -le "021" && sudo -H  -u airflow ${D}airflow webserver 2>&1 || true
