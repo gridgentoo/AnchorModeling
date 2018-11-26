@@ -43,6 +43,6 @@ test "$N" -le "028" && sudo chown -R airflow "$H/web/airflow.cfg.sample"
 test "$N" -le "029" && sudo -H  -u airflow ${D}airflow initdb
 
 test "$N" -le "030" && sudo cp "$W/_03_files/kill-all-airflow.sh" "$H/web/"
-test "$N" -le "031" && sudo cp "$W/_03_files/kill-all-airflow-workerts.sh" "$H/web/"
+test "$N" -le "031" && sudo cp "$W/_03_files/kill-all-airflow-workers.sh" "$H/web/"
 test "$N" -le "032" && sudo cp "$W/_03_files/start.sh" "$H/web/"
 
