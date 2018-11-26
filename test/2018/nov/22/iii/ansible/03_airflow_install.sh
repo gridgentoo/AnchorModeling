@@ -3,7 +3,7 @@ set -e -x
 ! test -n "$N" && N=001
 # https://blog.nolanemirot.com/2017/08/14/install-airflow-1-8-0-on-ubuntu-16-04/
 H=/opt/airflow/airflow_home
-D=/opt/airflow/airflow_home/.local/bin
+D=/opt/airflow/airflow_home/.local/bin/
 W=$PWD
 test "$N" -le "001" && sudo apt-get update
 test "$N" -le "002" && sudo -u postgres psql -c '\q'
