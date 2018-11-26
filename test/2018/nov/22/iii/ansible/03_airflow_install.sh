@@ -23,7 +23,7 @@ test "$N" -le "013" && sudo pip install virtualenv
 
 test "$N" -le "014" && (cd "$H" && sudo -H  -u airflow virtualenv -p /usr/bin/python3 -v "$H/env")
 test "$N" -le "015" && sudo -H  -u airflow sh "$H/env/bin/activate"
-test "$N" -le "016" && sudo -H  -u airflow pip uninstall -y airflow || rm -rf "$H/$web/py3_airflow"
+test "$N" -le "016" && sudo -H  -u airflow pip uninstall -y apache-airflow || rm -rf "$H/$web/py3_airflow"
 test "$N" -le "017" && sudo -H  -u airflow pip uninstall -y redis || rm -rf "$H/web/py3_redis"
 
 test "$N" -le "018" && sudo -H  -u airflow pip install --user apache-airflow[postgres,s3,celery]==1.8.2
