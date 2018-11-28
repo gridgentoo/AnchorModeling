@@ -47,11 +47,11 @@ test "$N" -le "031" && sudo cp "$W/_03_files/kill-all-airflow-workers.sh" "$H/we
 test "$N" -le "032" && sudo cp "$W/_03_files/start.sh" "$H/web/"
 
 
-test "$N" -le "033" && sudo -H  -u airflow wget http://download.redis.io/redis-stable.tar.gz
-test "$N" -le "034" && sudo -H  -u airflow tar xvzf redis-stable.tar.gz
-test "$N" -le "035" && cd redis-stable && make && cd src && sh redis-server
+test "$N" -le "033" && sudo -H  -u airflow cd /tmp && wget http://download.redis.io/redis-stable.tar.gz
+test "$N" -le "034" && sudo -H  -u airflow cd /tmp && tar xvzf redis-stable.tar.gz
+test "$N" -le "035" && cd /tmp/redis-stable && make && cd src && sh redis-server
 
-test "$N" -le "036" && mkdir dags
+test "$N" -le "036" && mkdir -p "$H/dags"
 test "$N" -le "037" && echo -n -e "from airflow import DAG\n
 from airflow.operators.bash_operator import BashOperator\n
 from datetime import datetime, timedelta\n
@@ -90,7 +90,7 @@ t3 = BashOperator(\n
     dag=dag)\n
 \n
 t2.set_upstream(t1)\n
-t3.set_upstream(t1)\n" > dags/nolan.py
+t3.set_upstream(t1)\n" > "$H/dags/nolan.py"
 
 test "$N" -le "038" && sudo -H  -u airflow ${D}airflow worker &
 test "$N" -le "039" && sudo -H  -u airflow ${D}airflow scheduler &
