@@ -52,7 +52,7 @@ test "$N" -le "033" && sudo -H  -u airflow cd /tmp && wget http://download.redis
 test "$N" -le "034" && sudo -H  -u airflow cd /tmp && tar xvzf redis-stable.tar.gz
 test "$N" -le "035" && sudo -H  -u airflow cd /tmp/redis-stable && make && cd src && sh redis-server
 
-test "$N" -le "036" && mkdir -p "$H/dags"
+test "$N" -le "036" && sudo -H  -u airflow mkdir -p "$H/dags"
 test "$N" -le "037" && sudo -H  -u airflow cp "$W/_03_files/$F" "$H/dags/"
 
 test "$N" -le "038" && sudo -H  -u airflow ${D}airflow worker &
