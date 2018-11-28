@@ -50,11 +50,15 @@ test "$N" -le "032" && sudo cp "$W/_03_files/start.sh" "$H/web/"
 
 test "$N" -le "033" && sudo -H  -u airflow cd /tmp && wget http://download.redis.io/redis-stable.tar.gz
 test "$N" -le "034" && sudo -H  -u airflow cd /tmp && tar xvzf redis-stable.tar.gz
-test "$N" -le "035" && sudo -H  -u airflow cd /tmp/redis-stable && make && cd src && sh redis-server
+test "$N" -le "035" && sudo -H  -u airflow touch /tmp/03_redis_server.log
+test "$N" -le "036" && sudo -H  -u airflow cd /tmp/redis-stable && make && cd src && sh redis-server 2>&1 >> /tmp/03_redis_server.log
 
-test "$N" -le "036" && sudo -H  -u airflow mkdir -p "$H/dags"
-test "$N" -le "037" && sudo -H  -u airflow cp "$W/_03_files/$F" "$H/dags/"
+test "$N" -le "037" && sudo -H  -u airflow mkdir -p "$H/dags"
+test "$N" -le "038" && sudo -H  -u airflow cp "$W/_03_files/$F" "$H/dags/"
 
-test "$N" -le "038" && sudo -H  -u airflow ${D}airflow worker &
-test "$N" -le "039" && sudo -H  -u airflow ${D}airflow scheduler &
-test "$N" -le "040" && sudo -H  -u airflow ${D}airflow webserver -p 8080
+test "$N" -le "039" && sudo -H  -u airflow touch /tmp/03_worker.log
+test "$N" -le "040" && sudo -H  -u airflow ${D}airflow worker 2>&1 >> /tmp/03_worker.log &
+test "$N" -le "041" && sudo -H  -u airflow ${D}airflow touch /tmp/03_scheduler.log
+test "$N" -le "042" && sudo -H  -u airflow ${D}airflow scheduler 2>&1 >> /tmp/03_scheduler.log &
+test "$N" -le "043" && sudo -H  -u airflow ${D}airflow touch /tmp/03_webserver.log
+test "$N" -le "044" && sudo -H  -u airflow ${D}airflow webserver -p 8080 2>&1 >> /tmp/03_webserver.log &
