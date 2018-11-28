@@ -4,6 +4,7 @@ set -e -x
 # https://blog.nolanemirot.com/2017/08/14/install-airflow-1-8-0-on-ubuntu-16-04/
 H=/opt/airflow/airflow_home
 D=/opt/airflow/airflow_home/.local/bin/
+F="nolan.py"
 W=$PWD
 test "$N" -le "001" && sudo apt-get update
 test "$N" -le "002" && sudo -u postgres psql -c '\q'
@@ -49,48 +50,10 @@ test "$N" -le "032" && sudo cp "$W/_03_files/start.sh" "$H/web/"
 
 test "$N" -le "033" && sudo -H  -u airflow cd /tmp && wget http://download.redis.io/redis-stable.tar.gz
 test "$N" -le "034" && sudo -H  -u airflow cd /tmp && tar xvzf redis-stable.tar.gz
-test "$N" -le "035" && cd /tmp/redis-stable && make && cd src && sh redis-server
+test "$N" -le "035" && sudo -H  -u airflow cd /tmp/redis-stable && make && cd src && sh redis-server
 
 test "$N" -le "036" && mkdir -p "$H/dags"
-test "$N" -le "037" && echo -n -e "from airflow import DAG\n
-from airflow.operators.bash_operator import BashOperator\n
-from datetime import datetime, timedelta\n
-\n
-default_args = {\n
-    'owner': 'airflow',\n
-    'start_date': datetime(2017, 7, 30)\n
-}\n
-\n
-dag = DAG(\n
-    'nolan', default_args=default_args, schedule_interval=timedelta(1))\n
-# t1, t2 and t3 are examples of tasks created by instantiating operators\n
-t1 = BashOperator(\n
-    task_id='print_date',\n
-    bash_command='date',\n
-    dag=dag)\n
-\n
-t2 = BashOperator(\n
-    task_id='sleep',\n
-    bash_command='sleep 5',\n
-    retries=3,\n
-    dag=dag)\n
-\n
-templated_command = \\"\\"\\"\n
-    {% for i in range(5) %}\n
-        echo \\"{{ ds }}\\"\n
-        echo \\"{{ macros.ds_add(ds, 7)}}\\"\n
-        echo \\"{{ params.my_param }}\\"\n
-    {% endfor %}\n
-\\"\\"\\"\n
-\n
-t3 = BashOperator(\n
-    task_id='templated',\n
-    bash_command=templated_command,\n
-    params={'my_param': 'Parameter I passed in'},\n
-    dag=dag)\n
-\n
-t2.set_upstream(t1)\n
-t3.set_upstream(t1)\n" > "$H/dags/nolan.py"
+test "$N" -le "037" && sudo -H  -u airflow cp "$W/_03_files/$F" "$H/dags/"
 
 test "$N" -le "038" && sudo -H  -u airflow ${D}airflow worker &
 test "$N" -le "039" && sudo -H  -u airflow ${D}airflow scheduler &
