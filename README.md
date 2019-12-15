@@ -1,6 +1,12 @@
-# [AnchorModeling] for Input–output model [Межотраслевые Балансы]
-![alt text](http://www.anchormodeling.com/wp-content/uploads/2010/08/AMatDSV.jpg)
 
+## Commodity Brief - Coffee  
+![alt text](https://i.ytimg.com/vi/sXMzej6ksew/maxresdefault.jpg)
+The world of commodity trading. Series continues by looking at individual commodities, this week is coffee, Richard Watts, Managing Director, HR Maritime.
+https://www.youtube.com/watch?v=sXMzej6ksew  
+
+
+## [AnchorModeling] for Input–output model [Межотраслевые Балансы]
+![alt text](http://www.anchormodeling.com/wp-content/uploads/2010/08/AMatDSV.jpg)
 
 ![alt text](https://i.ytimg.com/vi/UxVbDJ3ERas/maxresdefault.jpg)
 The Economics of Wassily Leontief: Input-Output Analysis  
