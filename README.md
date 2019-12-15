@@ -1,7 +1,7 @@
 
 ## Commodity Brief - Coffee  
 ![alt text](https://i.ytimg.com/vi/sXMzej6ksew/maxresdefault.jpg)
-The world of commodity trading. Series continues by looking at individual commodities, this week is coffee, Richard Watts, Managing Director, HR Maritime.
+The world of commodity trading. Series continues by looking at individual commodities, this week is coffee, Richard Watts, Managing Director, HR Maritime.  
 https://www.youtube.com/watch?v=sXMzej6ksew  
 
 
